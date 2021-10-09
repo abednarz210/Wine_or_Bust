@@ -10,7 +10,7 @@
 *.userosscache
 *.sln.docstates
 **/.DS_Store
-api_keys.py
+api_key.py
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
