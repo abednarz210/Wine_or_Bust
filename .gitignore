@@ -5,7 +5,7 @@
 .DS_Store
 # Adding config.py file.
 
-api_key.py
+config.py
 # User-specific files
 *.rsuser
 *.suo
