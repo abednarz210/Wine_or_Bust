@@ -129,7 +129,7 @@ def filtered_top_wine(flavor='all', region='all'):
         limit 20;
         '''
 
-    elif flavor == 'all' and region !='all': 
+    elif flavor == 'all' and region != 'all': 
 
         sql = '''
         select name, points, price, variety, winery, description, region, state
@@ -158,7 +158,7 @@ def filtered_top_wine(flavor='all', region='all'):
     return df.to_dict(orient="records")
 
 if __name__ == "__main__":
-    results = filtered_top_wine('all','Russion River Valley')
+    results = filtered_top_wine(flavor='tart', region='Russian River Valley')
     print(results)
 
 
