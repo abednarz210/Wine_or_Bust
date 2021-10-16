@@ -26,7 +26,7 @@ application = Flask(__name__)
 @application.route("/")
 def index():
 
-    return render_template("index.html", data=data)
+    return render_template("index.html")
 
 # @application.route("/api/v1.0")
 # def show_apis():
