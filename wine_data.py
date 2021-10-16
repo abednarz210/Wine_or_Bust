@@ -104,16 +104,53 @@ def total_regions():
     session.close()  
     return df.to_dict(orient="records")
 
-def filtered_top_wine(): 
+def filtered_top_wine(flavor='all', region='all'): 
     
     session = Session(engine)
-    sql = '''
-    select name, points, price, variety, winery, description, region, state
-    from wine
-    where price is not null
-    order by points DESC, price
-	limit 20;
-    '''
+
+    if flavor == 'all' and region == 'all':
+
+        sql = '''
+        select name, points, price, variety, winery, description, region, state
+        from wine
+        where price is not null
+        order by points DESC, price
+        limit 20;
+        '''
+
+    elif flavor != 'all' and region =='all': 
+
+        sql = '''
+        select name, points, price, variety, winery, description, region, state
+        from wine
+        where price is not null
+        and description LIKE '% {flavor} %'
+        order by points DESC, price
+        limit 20;
+        '''
+
+    elif flavor == 'all' and region !='all': 
+
+        sql = '''
+        select name, points, price, variety, winery, description, region, state
+        from wine
+        where price is not null
+        and region == '{region}'
+        order by points DESC, price
+        limit 20;
+        '''
+
+    else: 
+
+        sql = '''
+        select name, points, price, variety, winery, description, region, state
+        from wine
+        where price is not null
+        and description LIKE '% {flavor} %'
+        and region == '{region}'
+        order by points DESC, price
+        limit 20;
+        '''
 
     df = pd.read_sql(sql, session.connection())
 
@@ -121,8 +158,8 @@ def filtered_top_wine():
     return df.to_dict(orient="records")
 
 if __name__ == "__main__":
-    results = filtered_wine([''])
-    print(params)
+    results = filtered_top_wine('all','Russion River Valley')
+    print(results)
 
 
 
