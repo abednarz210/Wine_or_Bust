@@ -7,7 +7,7 @@
 
 ### Motivation
 - Website for wine lovers to discover new domestic wines right here in the U.S. Wines were reviewed by the country’s best wine tasters to describe their flavors and ratings
-### [Our Website](https://www.kaggle.com/zynicide/wine-reviews)
+### [Our Website](https://wine-or-bust.herokuapp.com/)
 
 
 
