@@ -18,7 +18,7 @@ California,Bennett Valley,75,38.4404672,-122.6766527
 California,Big Valley District-Lake County,2,39.0221274,-122.8870837
 California,Calaveras County,98,38.1960477,-120.6805037
 California,California,2629,36.778261,-119.4179324
-California,California Other,5,37.09024,-95.712891
+California,California Other,5,36.778261,-119.4179324
 California,California-Oregon,1,39.59388999999999,-121.52833
 California,Calistoga,149,38.5787965,-122.5797054
 California,Capay Valley,3,38.7107366,-122.0471933
@@ -33,7 +33,7 @@ California,Chiles Valley,12,38.532564,-122.3261472
 California,Cienega Valley,22,36.7099602,-121.3349326
 California,Clarksburg,105,39.2806451,-80.34453409999999
 California,Clear Lake,28,39.05819049999999,-122.831015
-California,Clements Hills,16,28.0673171,-81.9530217
+California,Clements Hills,16,38.19091,-121.08767
 California,Cole Ranch,6,35.9733,-119.035202
 California,Contra Costa County,73,37.8534093,-121.9017954
 California,Coombsville,55,38.2971707,-122.2864459
@@ -87,7 +87,7 @@ California,Moon Mountain District Sonoma County,19,38.3459224,-122.4587953
 California,Mount Harlan,7,36.6974604,-121.405214
 California,Mount Veeder,169,38.3793566,-122.4477575
 California,Mt. Harlan,65,36.6974604,-121.405214
-California,Napa,2,36.7000812,-95.63893139999999
+California,Napa,2,38.5024689,-122.2653887
 California,Napa County,78,38.5024689,-122.2653887
 California,Napa County-Lake County,1,38.4963694,-122.3617618
 California,Napa County-Sonoma County,26,38.5779555,-122.9888319
@@ -123,7 +123,7 @@ California,Rutherford,411,40.826489,-74.10680909999999
 California,Saddle Rock-Malibu,7,34.09461599999999,-118.8207687
 California,San Antonio Valley,10,37.3917578,-121.4903848
 California,San Benito County,38,36.5760883,-120.9876321
-California,San Bernabe,9,25.7560886,-100.387691
+California,San Bernabe,9,34.115784,-117.302399
 California,San Diego County,2,32.7157305,-117.1610966
 California,San Francisco Bay,14,37.6909682,-122.3107517
 California,San Francisco Bay-Livermore Valley,8,37.6795353,-121.7215095
@@ -159,10 +159,10 @@ California,Sonoma-Napa,19,38.291859,-122.4580356
 California,Sonoma-Napa-Lake,1,38.5477595,-122.5106037
 California,Sonoma-Napa-Mendocino,1,38.283957,-122.456822
 California,Sonoma-Napa-Monterey,1,36.5822807,-121.8303061
-California,Sonoma-Santa Barbara-Mendocino,1,42.0340368,-87.6781677
+California,Sonoma-Santa Barbara-Mendocino,1,38.283957,-122.456822
 California,South Coast,58,33.69100299999999,-117.8889767
 California,Spring Mountain District,136,38.5244649,-122.5512918
-California,St. Helena,232,-15.9650104,-5.7089241
+California,St. Helena,232,38.5052, -122.633316
 California,Sta. Rita Hills,975,34.66595650000001,-120.1152408
 California,Stags Leap District,155,38.4141825,-122.3213126
 California,Suisun Valley,30,38.2638535,-122.1139504
@@ -173,7 +173,7 @@ California,Templeton Gap District,38,33.8213349,-116.5452378
 California,Tuolumne County,5,38.029655,-119.9740534
 California,Ventura County,3,34.3704884,-119.1390642
 California,Yolo County,47,38.7646021,-121.9017954
-California,York Mountain,9,65.466667,-167.283333
+California,York Mountain,9,35.5461,-120.8332
 California,Yorkville Highlands,79,38.8979586,-123.2144507
 California,Yountville,92,38.40157809999999,-122.3608105
 Colorado,Colorado,27,39.5500507,-105.7820674
@@ -216,13 +216,13 @@ Oregon,Applegate Valley,153,42.3244456,-123.2866352
 Oregon,Chehalem Mountains,334,45.3762277,-123.037326
 Oregon,Columbia Gorge (OR),73,45.72530920000001,-121.7299656
 Oregon,Columbia Valley (OR),73,47.4537758,-120.3251007
-Oregon,Dundee Hills,554,40.6745037,-111.8543877
+Oregon,Dundee Hills,554,45.2779,-123.0110
 Oregon,Elkton Oregon,26,43.6376174,-123.568152
 Oregon,Eola-Amity Hills,276,45.1312282,-123.1637138
 Oregon,McMinnville,124,45.2107513,-123.1944873
 Oregon,Oregon,460,43.8041334,-120.5542012
 Oregon,Oregon Other,3,43.8041334,-120.5542012
-Oregon,Polk County,2,27.8617347,-81.6911559
+Oregon,Polk County,2,44.9267,-123.4919
 Oregon,Ribbon Ridge,134,45.3596594,-123.094848
 Oregon,Rogue Valley,384,42.4401246,-122.9261546
 Oregon,Southern Oregon,122,42.7976791,-122.4332992
