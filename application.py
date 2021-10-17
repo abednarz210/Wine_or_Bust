@@ -1,7 +1,7 @@
 # dependencies
 from dbstring import database, connect_string
-# relational database class with our data retrieval functions
-from wine_data import wine_data 
+# import file with our library of functions
+import wine_data 
 # mongodb database class with the same function signitures ( same functions)
 # from BellyButtonMongo import BellyButtonMongo
 
@@ -28,39 +28,39 @@ def index():
 
     return render_template("index.html", data=data)
 
-# @application.route("/api/v1.0")
-# def show_apis():
-#     """List all available api routes."""
-#     return (
-#         f"<h4>Available Routes:</h4>"
-#         f'<a href="/api/v1.0/ids">/api/v1.0/ids</a><br/>'       
-#         f'<a href="/api/v1.0/info/1286">/api/v1.0/info/subject_id</a><br/>' 
-#         f'<a href="/api/v1.0/subjects">/api/v1.0/subjects</a><br/>' 
-#         f'<a href="/api/v1.0/subjects/1286">/api/v1.0/subjects/subject_id</a><br/>' 
-#         f'<a href="/"><h4>Back</h4></a><br/>' 
-#     )    
+@application.route("/api/v1.0")
+def show_apis():
+    """List all available api routes."""
+    return (
+        f"<h4>Available Routes:</h4>"
+        f'<a href="/api/v1.0/topwineries">/api/v1.0/topwineries</a><br/>'  
+        f'<a href="/api/v1.0/flavors">/api/v1.0/flavors</a><br/>'    
+        f'<a href="/api/v1.0/wineinfo">/api/v1.0/wineinfo</a><br/>'
+        f'<a href="/api/v1.0/filteredwine/all/all">/api/v1.0/filteredwine/all/all</a><br/></br>'   
+        f'<a href="/"><h4>Back</h4></a><br/>'  
+        
+        
+    )    
 
-# @application.route("/api/v1.0/ids")
-# def get_all_ids():
-#     return jsonify(data.get_subject_ids())
+@application.route("/api/v1.0/topwineries")
+def top_wineries():
+    return jsonify(data.top_wineries())
 
-# @application.route("/api/v1.0/info")
-# def get_all_results():
-#     return jsonify(data.get_data_for_all())    
+@application.route("/api/v1.0/wineinfo")
+def wine_info():
+    return jsonify(data.wine_info())
 
-# @application.route("/api/v1.0/info/<subject_id>")
-# def get_one_user_results(subject_id):
-#     return jsonify(data.get_data_by_user(subject_id))    
+@application.route("/api/v1.0/flavors")
+def flavors():
+    return jsonify(data.flavors())
 
-# @application.route("/api/v1.0/subjects")
-# def get_all_subjects():
-#     return jsonify(data.get_subjects())
+@application.route("/api/v1.0/winerydata")
+def winery_data():
+    return jsonify(data.winery_data())
 
-# @application.route("/api/v1.0/subjects/<subject_id>")
-# def get_one_subject(subject_id):
-#     return jsonify(data.get_subjects(subject_id))
-
-
+@application.route("/api/v1.0/filteredwine/<flavor>/<region>")
+def filtered_top_wine(flavor, region):
+    return jsonify(data.filtered_top_wine(flavor, region))
 
 if __name__ == '__main__':
     application.run(debug=True)

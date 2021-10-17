@@ -1,11 +1,38 @@
 import pandas as pd
 
 from sqlalchemy.orm import Session
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, inspect
 
 connect_string = "sqlite:///Resources/winedb2.db"
 
 engine = create_engine(connect_string)
+
+def display_db_info():
+    inspector = inspect(engine)
+    tables = inspector.get_table_names()
+    for table in tables:
+        print("\n")
+        print('-' * 12)
+        print(f"table '{table}' has the following columns:")
+        print('-' * 12)
+        for column in inspector.get_columns(table):
+            print(f"name: {column['name']}   column type: {column['type']}")
+
+def flavors():
+
+    session = Session(engine)
+    sql = '''
+    SELECT flavor
+    FROM flavors
+    order by flavor;
+    '''
+
+    df = pd.read_sql(sql, session.connection())
+
+    session.close()  
+    # return df.to_dict(orient="records")  
+    return list(df.flavor)     
+
 
 def top_wineries():
 
@@ -23,7 +50,7 @@ def top_wineries():
     return df.to_dict(orient="records")     
 
 
-def wine_data():
+def wine_info():
 
     session = Session(engine)
     sql = '''
@@ -104,8 +131,9 @@ def total_regions():
     session.close()  
     return df.to_dict(orient="records")
 
+
 def filtered_top_wine(flavor='all', region='all'): 
-    
+
     session = Session(engine)
 
     if flavor == 'all' and region == 'all':
@@ -158,7 +186,7 @@ def filtered_top_wine(flavor='all', region='all'):
     return df.to_dict(orient="records")
 
 if __name__ == "__main__":
-    results = filtered_top_wine(flavor='tart', region='Russian River Valley')
+    results = filtered_top_wine('vanilla', 'Sonoma Valley')
     print(results)
 
 
