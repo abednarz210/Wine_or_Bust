@@ -15,37 +15,67 @@ d3.json(wineSelected).then((data) => {
 
 // ********************BUILD CHARTS*****************************
 
+// FUNCTION: create a function to clear out the divs in HTML and only show new data
+function resetData() {
+
+    dropdownFlavor.html("");
+    dropdownRegion.html("");
+    barPoints.html("");
+    barPrices.html("");
+};
+
+
 function buildCharts(flavor, region) {
+
+    // reset data
+    resetData();
 
     d3.json(wineSelected).then((data) => {
 
-        var resultArray = data[0];
+        let resultArray = data[0];
 
-        var name = resultArray.name;
-        var points = resultArray.points;
-        var description = resultArray.description;
-        var region = resultArray.region;
-        var state = resultArray.state;
-        var variety = resultArray.variety;
-        var winery = resultArray.winery;
+        let name = resultArray.name;
+        let points = resultArray.points;
+        let prices = resultArray.price;
+        let description = resultArray.description;
+        let region = resultArray.region;
+        let state = resultArray.state;
+        let variety = resultArray.variety;
+        let winery = resultArray.winery;
 
-        var yticks = name;
-        var barData = [
-        {
-            y: yticks,
+        let tracePoints = {
+
             x: points,
-            text: name,
-            type: "bar",
-            orientation: "h",
-        }
-        ];
-
-        var barLayout = {
-            title: "Top Wines",
-            margin: { t: 30, l: 150 }
+            y: name,
+            text: description,
+            type: 'bar',
+            orientation: 'h'
         };
 
-        Plotly.newPlot("barPoints", barData, barLayout);
+        let tracePoints = [tracePoints];
+        
+        let trace1layout = {
+            margin: { t: 30, l: 30 } 
+        };
+        
+        Plotly.newPlot("barPoints", tracePoints, trace1Layout);
+
+        let trace2 = {
+
+            x: prices,
+            y: name,
+            text: description,
+            type: 'bar',
+            orientation: 'h'
+        };
+
+        let tracePrices = [trace2];
+        
+        let trace2layout = {
+            margin: { t: 30, l: 30 } 
+        };
+        
+        Plotly.newPlot("barPrices", tracePricesS, trace2Layout);
 
     });
 
@@ -53,25 +83,40 @@ function buildCharts(flavor, region) {
 
 function init() {
 
-  
-    // Use the list of sample names to populate the select options
-    d3.json("/api/v1.0/flavors").then((data) => {
-      var flavors = data;
-  
-      // Use the first sample from the list to build the initial plots
-      var defaultFlavor = 'all';
-      var defaultRegion = 'all';
-      var selectedData = buildCharts(defaultFlavor, defaultRegion);
-  
-    });
-  }
-  
-  function optionChanged(newFlavor, newRegion) {
-    // Fetch new data each time a new sample is selected
-    console.log(`change ${{newFlavor}}, ${{newRegion}}`)
+    // read in data from flavors
+    d3.json('/api/v1.0/flavors').then((data => {
+
+        // for loop to fill in the drop down lists
+        data.flavor.forEach((name => {
+            let option = dropdownFlavor.append("option");
+            option.text(name);
+        }));
+    }));
+
+    d3.json('/api/v1.0/regions').then((data => {
+
+        // for loop to fill in the drop down lists
+        data.region.forEach((name => {
+            let option = dropdownRegion.append("option");
+            option.text(name);
+        }));
+
+    }));
+    
+    // set the default to all
+    let defaultFlavor = dropdownFlavor.property("all");
+    let defaultRegion = dropdownRegion.property("all");
+
+    // plot charts with defaults
+    buildCharts(defaultFlavor, defaultRegion);
+
+};
+
+function optionChanged(newFlavor, newRegion) {
+
     buildCharts(newFlavor, newRegion);
-  
-  }
-  
-  // Initialize the dashboard
-  init();
+
+};
+
+// Initialize the dashboard
+init();
