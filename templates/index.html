@@ -211,7 +211,7 @@
       <ul class="nav navbar-nav navbar-right">
              
         <li><a href="#about">About</a></li>
-        <li><a href="#visualizations">Visualizations</a></li>
+        <li><a href="#visualizations">Find Wine</a></li>
         <li><a href="#data">Data</a></li>
         <li><a href="#maps">Maps</a></li>
         <li><a href="#wineries">Wineries</a></li>
@@ -266,8 +266,8 @@
 
 <!-- Container (Portfolio Section) -->
 <div id="visualizations" class="container-fluid text-center bg-grey">
-  <h2>Visualizations Placeholders</h2><br>
-  <h4>What we have created</h4>
+  <h2>Find Your New Favorite Wine</h2><br>
+  <h4>Pick a Flavor: <select id="selFlavor" onchange="flavorChanged(this.value)"></select> Desired Region: <select id="selRegion" onchange="regionChanged(this.value)"></select></h4>
   <div class="row text-center slideanim">
     <div class="col-sm-4">
       <div class="thumbnail">
