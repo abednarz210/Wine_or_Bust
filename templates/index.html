@@ -267,27 +267,24 @@
 <!-- Container (Portfolio Section) -->
 <div id="visualizations" class="container-fluid text-center bg-grey">
   <h2>Find Your New Favorite Wine</h2><br>
-  <h4>Pick a Flavor: <select id="selFlavor" onchange="flavorChanged(this.value)"></select> Desired Region: <select id="selRegion" onchange="regionChanged(this.value)"></select></h4>
+  <h4>Pick a Flavor: <select id="selFlavor" onchange="flavorChanged(this.value)">
+    {% for flavor in flavors %}
+    <option value="{{flavor}}">{{flavor}}</option>
+  {% endfor %}</select> Desired Region: <select id="selRegion" onchange="regionChanged(this.value)">{% for region in regions %}
+    <option value="{{region}}">{{region}}</option>
+  {% endfor %}</select></h4>
+  
   <div class="row text-center slideanim">
-    <div class="col-sm-4">
+    <div class="col-sm-6">
       <div class="thumbnail">
-        <img src="https://i.ibb.co/CwTdc4c/placeholder2.png"  alt="vis2" width="400" height="300">
-        <p><strong>Top Wines</strong></p>
-        <p>By Points</p>
+        <p><strong>Top Rated Wines</strong></p>
+        <div id="barPoints"></div>
       </div>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-6">
       <div class="thumbnail">
-        <img src="https://i.ibb.co/h9N2M5C/placeholder1.png" alt="vis1" width="400" height="300">
-        <p><strong>Top Wineries</strong></p>
-        <p>By Points</p>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="https://i.ibb.co/h2tB90h/placeholder3.png"  alt="vis3" width="400" height="300">
-        <p><strong>Wines: Lowest to Highest</strong></p>
-        <p>by price</p>
+        <p><strong>Prices</strong></p>
+        <div id="barPrices"></div>
       </div>
     </div>
   </div><br>
@@ -460,6 +457,9 @@ $(document).ready(function(){
   });
 })
 </script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="static/js/plots.js"></script>
 
 </body>
 </html>

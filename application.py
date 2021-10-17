@@ -33,8 +33,9 @@ def show_apis():
     """List all available api routes."""
     return (
         f"<h4>Available Routes:</h4>"
-        f'<a href="/api/v1.0/topwineries">/api/v1.0/topwineries</a><br/>'  
-        f'<a href="/api/v1.0/flavors">/api/v1.0/flavors</a><br/>'    
+        f'<a href="/api/v1.0/flavors">/api/v1.0/flavors</a><br/>'
+        f'<a href="/api/v1.0/regions">/api/v1.0/regions</a><br/>'
+        f'<a href="/api/v1.0/topwineries">/api/v1.0/topwineries</a><br/>'     
         f'<a href="/api/v1.0/wineinfo">/api/v1.0/wineinfo</a><br/>'
         f'<a href="/api/v1.0/filteredwine/all/all">/api/v1.0/filteredwine/all/all</a><br/></br>'   
         f'<a href="/"><h4>Back</h4></a><br/>'  
@@ -53,6 +54,10 @@ def wine_info():
 @application.route("/api/v1.0/flavors")
 def flavors():
     return jsonify(data.flavors())
+
+@application.route("/api/v1.0/regions")
+def regions():
+    return jsonify(data.regions())
 
 @application.route("/api/v1.0/winerydata")
 def winery_data():

@@ -31,7 +31,22 @@ def flavors():
 
     session.close()  
     # return df.to_dict(orient="records")  
-    return list(df.flavor)     
+    return list(df.flavor)   
+
+def regions():
+
+    session = Session(engine)
+    sql = '''
+    SELECT distinct region
+    FROM wine
+    order by region;
+    '''
+
+    df = pd.read_sql(sql, session.connection())
+
+    session.close()  
+    # return df.to_dict(orient="records")  
+    return list(df.region)  
 
 
 def top_wineries():
@@ -56,6 +71,7 @@ def wine_info():
     sql = '''
     select name, variety, winery, region, state, description, points, price
     from wine
+    where price is not null
     order by state, region, winery, variety, name, points;
     '''
 
@@ -186,7 +202,7 @@ def filtered_top_wine(flavor='all', region='all'):
     return df.to_dict(orient="records")
 
 if __name__ == "__main__":
-    results = filtered_top_wine('vanilla', 'Sonoma Valley')
+    results = get_filtered_wine('Sonoma Valley')
     print(results)
 
 
