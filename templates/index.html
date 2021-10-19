@@ -212,7 +212,7 @@
              
         <li><a href="#about">About</a></li>
         <li><a href="#visualizations">Find Wine</a></li>
-        <li><a href="#data">Data</a></li>
+        <li><a href="#data">Fun Facts</a></li>
         <li><a href="#maps">Maps</a></li>
         <li><a href="#wineries">Wineries</a></li>
       </ul>
@@ -243,7 +243,7 @@
     <div class="col-sm-8">
       <h2>Welcome</h2><br>
       <h4>We're here for you, whether you're new to wine and want to know which bottle to buy, or if you're a seasoned pro. We can help you find your favorite bottle.
-      <p>Filter by region or flavor and you'll be on your way to finding the wine of your dreams.</h4><br>
+      <p></h4><br>
     </div>
     <div class="col-sm-4">
       <img src="https://i.ibb.co/6s0djW6/texas-winery.png" class="img-responsive img-rounded" alt="texas-winery">
@@ -267,6 +267,7 @@
 <!-- Container (Portfolio Section) -->
 <div id="visualizations" class="container-fluid text-center bg-grey">
   <h2>Find Your New Favorite Wine</h2><br>
+  <h4>Filter by region or flavor and you'll be on your way to finding the wine of your dreams.</h4></br>
   <h4>Pick a Flavor: <select id="selFlavor" onchange="flavorChanged(this.value)">
     {% for flavor in flavors %}
     <option value="{{flavor}}">{{flavor}}</option>
@@ -291,7 +292,7 @@
 
 
   
-  <h2>Wine Fun Facts from our data set???</h2>
+  <h2>Wine Fun Facts</h2>
   <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -303,13 +304,16 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <h4>"This company is the best. I am so happy with the result!"<br><span>Michael Roe, Vice President, Comment Box</span></h4>
+        <h4>A glass of good wine has a lengthy, more lingering aftertaste.</h4>
       </div>
       <div class="item">
-        <h4>"One word... WOW!!"<br><span>John Doe, Salesman, Rep Inc</span></h4>
+        <h4>There are 10,000 varieties of wine grapes existing worldwide.</h4>
       </div>
       <div class="item">
-        <h4>"Could I... BE any more happy with this company?"<br><span>Chandler Bing, Actor, FriendsAlot</span></h4>
+        <h4> A ton of grapes can be produced into 720 bottles of wine.</h4>
+      </div>
+      <div class="item">
+        <h4> Grapes are the most planted fruit all over the world.</h4>
       </div>
     </div>
 
@@ -459,7 +463,7 @@ $(document).ready(function(){
 </script>
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-<script src="static/js/plots.js"></script>
+<script src="../static/js/plots.js"></script>
 
 </body>
 </html>
