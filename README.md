@@ -5,11 +5,15 @@
 
 ## Finding the best wines in the USA 
 
+When it comes to wine, I tell people to throw away the vintage charts and invest in a corkscrew. The best way to learn about wine is the drinking." 
+  --- Alexis Lichine 
+
 ### Motivation
 
-"When it comes to wine, I tell people to throw away the vintage charts and invest in a corkscrew. The best way to learn about wine is the drinking." --- Alexis Lichine
+This website was created to help wine lovers, new or well versed, to select a wine suited to their tasting preference, budget and take a virtual tour of the many vineyards of small or large producers by region across the United States! 
 
-This website was created to help wine lovers, new or well versed, to select a wine suited to their tasting preference, budget and take a virtual tour of all the many vineyards by region across the United States!  
+We have compiled the tasting notes and wine ratings from wine experts across the globe to create a user experience as unique as each user to explore the many regions across the US.  So grab your corkscrew and “Cheers” to find your new favorite variety and region of wine produced in the US! 
+
 
 -- Website for wine lovers to discover new domestic wines right here in the U.S. Wines were reviewed by the country’s best wine tasters to describe their flavors and ratings
 ### [Our Website](https://wine-or-bust.herokuapp.com/)
