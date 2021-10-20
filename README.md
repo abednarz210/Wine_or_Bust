@@ -6,7 +6,12 @@
 ## Finding the best wines in the USA 
 
 ### Motivation
-- Website for wine lovers to discover new domestic wines right here in the U.S. Wines were reviewed by the country’s best wine tasters to describe their flavors and ratings
+
+"When it comes to wine, I tell people to throw away the vintage charts and invest in a corkscrew. The best way to learn about wine is the drinking." --- Alexis Lichine
+
+This website was created to help wine lovers, new or well versed, to select a wine suited to their tasting preference, budget and take a virtual tour of all the many vineyards by region across the United States!  
+
+-- Website for wine lovers to discover new domestic wines right here in the U.S. Wines were reviewed by the country’s best wine tasters to describe their flavors and ratings
 ### [Our Website](https://wine-or-bust.herokuapp.com/)
 
 
@@ -28,13 +33,12 @@
 <li>Plotly</li></ul>
 <li>SQL Lite</li></ul>
 <li>Google Places API</li></ul>
-<li>Matplotlib</li></ul>
 <li>HTML</li></ul>
 <li>CSS</li></ul>
 <li>JavaScript</li></ul>
 <li>SQL Alchemy</li></ul>
 <li>Flask</li></ul>
-<li>FontAwesome JS Library </li></ul>
+<li>FontAwesome</li></ul>
 </details>
 
 
