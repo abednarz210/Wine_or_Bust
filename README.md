@@ -34,6 +34,7 @@
 <li>JavaScript</li></ul>
 <li>SQL Alchemy</li></ul>
 <li>Flask</li></ul>
+<li>FontAwesome JS Library </li></ul>
 </details>
 
 
