@@ -14,7 +14,7 @@ When it comes to wine, I tell people to throw away the vintage charts and invest
 
 This website was created to help wine lovers, new or well versed, to select a wine suited to their tasting preference, budget and take a virtual tour of the many vineyards of small or large producers by region across the United States! 
 
-We have compiled the tasting notes and wine ratings from wine experts across the globe to create a user experience as unique as each user to explore the many regions across the US.  So grab your corkscrew and “Cheers” to finding your new favorite variety and region of wine produced in the US! 
+We have compiled the tasting notes and wine ratings from wine experts across the globe to create a user experience as unique as each user.  Visitors to our site explore vineyards in the many regions across the US to search for wines based on flavor, descriptions and their personal budgets. So grab your corkscrew and “Cheers” to find your new favorite variety and region of wine produced in the US! ced in the US! 
 
 
 
