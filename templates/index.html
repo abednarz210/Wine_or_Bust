@@ -12,12 +12,17 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/5b66a64f77.js" crossorigin="anonymous"></script>
   <style>
   body {
-    font: 400 15px Montserrat, sans-serif;
+    font-family: 'Raleway', sans-serif;
     line-height: 1.8;
     color: black;
     background-color: #FFFFF0;
+  
    
   }
 
@@ -40,7 +45,7 @@ h2 {
     background-color: #A72002;
     color: #FFFFF0;
     padding: 100px 25px;
-    font-family: Montserrat, sans-serif;
+
   }
   .container-fluid {
     padding: 60px 50px;
@@ -116,7 +121,7 @@ h2 {
     font-size: 32px;
   }
   .panel-footer h4 {
-    color: black;
+    color: #FFFFF0;
     font-size: 14px;
   }
   .panel-footer .btn {
@@ -215,11 +220,9 @@ h2 {
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
              
-        <li><a href="#about">About</a></li>
-        <li><a href="#visualizations">Find Wine</a></li>
-        <li><a href="#data">Data</a></li>
-        <li><a href="#region-map">Region Map</a></li>
-        <li><a href="#wineries">Wineries</a></li>
+        <li><a href="#about"><i class="fas fa-wine-glass-alt"></i> About</a></li>
+        <li><a href="#visualizations"><i class="fas fa-wine-glass-alt"></i> Find Wine</a></li>
+        <li><a href="#region-map"><i class="fas fa-wine-glass-alt"></i> Region Map</a></li>
       </ul>
     </div>
   </div>
@@ -282,7 +285,7 @@ h2 {
   </div><br>
 
   
-  <h2>Wine Fun Facts from our data set???</h2>
+  <h2>Wine Fun Facts</h2>
   <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -290,17 +293,16 @@ h2 {
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
-
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <h4>"This company is the best. I am so happy with the result!"<br><span>Michael Roe, Vice President, Comment Box</span></h4>
+        <h4>A ton of grapes can be produced into 720 bottles of wine.</span></h4>
       </div>
       <div class="item">
-        <h4>"One word... WOW!!"<br><span>John Doe, Salesman, Rep Inc</span></h4>
+        <h4>To quench their thirst, people drank wine instead of water centuries ago. During that time, water wasn't clean all the time, and natural fermentation, when the wine is made, could kill germs caused by typhi (salmonella) and cholera.</span></h4>
       </div>
       <div class="item">
-        <h4>"Could I... BE any more happy with this company?"<br><span>Chandler Bing, Actor, FriendsAlot</span></h4>
+        <h4>“The ultimate destination of wine is on the table, with food. Serve the same wine with two different dishes and you will have two different opinions of it.”<br><span>Kermit Lynch</span></h4>
       </div>
     </div>
 
@@ -329,7 +331,7 @@ h2 {
     <div class="col-sm-4">
     </div>
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-heart logo-small"></span>
+      <i class="fas fa-glass-cheers fa-4x"></i>
       <p>This project is brought to you by: Alexander Espinosa, Amy Bednarz, Ashley Lutz, Michelle Herman, and Samantha Perez</p>
        <p>Check out this project's GitHub Repository!</p>
         <button onclick="document.location='https://github.com/ashleylynnl/Wine-or-Bust-Project'">GitHub Repo</button></p>
