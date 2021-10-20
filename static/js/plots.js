@@ -1,5 +1,23 @@
 // ********************DEFINE VARIABLES***********************
 
+// global variables used for array lists
+var flavorsIn = [];
+var regionsIn = [];
+
+// variable for routes
+var url_flavors = '/api/v1.0/flavors';
+var url_regions = '/api/v1.0/regions';
+
+var urls = [url_flavors, url_regions];
+
+var promises = [];
+
+urls.forEach(function(url){promises.push(d3.json(url))});
+
+// console.log(promises);
+Promise.all(promises).then(data => init(data));
+
+
 // variables to hold the HTML IDs that will be updated with new data
 let dropdownFlavor = d3.select("#selFlavor");
 let dropdownRegion = d3.select("#selRegion");
@@ -10,25 +28,14 @@ var wineSelected = `/api/v1.0/filteredwine/all/all`; // keeping it all for now s
 
 // ********************TESTING THE DATA FILE********************
 
-d3.json(wineSelected).then((data) => {
-    console.log('data', data)}); // this works!
+// d3.json(wineSelected).then((data) => {
+//     console.log('data', data)}); // this works!
 
 // ********************BUILD CHARTS*****************************
-
-// // FUNCTION: create a function to clear out the divs in HTML and only show new data
-// function resetData() {
-
-//     dropdownFlavor.html("");
-//     dropdownRegion.html("");
-//     barPoints.html("");
-//     barPrices.html("");
-// };
 
 
 // function buildCharts(flavor, region) {
 
-//     // reset data
-//     resetData();
 
 //     d3.json(wineSelected).then((data) => {
 
@@ -81,42 +88,60 @@ d3.json(wineSelected).then((data) => {
 
 // };
 
-// function init() {
-
-//     // read in data from flavors
-//     d3.json('/api/v1.0/flavors').then((data => {
-
-//         // for loop to fill in the drop down lists
-//         data.flavor.forEach((name => {
-//             let option = dropdownFlavor.append("option");
-//             option.text(name);
-//         }));
-//     }));
-
-//     d3.json('/api/v1.0/regions').then((data => {
-
-//         // for loop to fill in the drop down lists
-//         data.region.forEach((name => {
-//             let option = dropdownRegion.append("option");
-//             option.text(name);
-//         }));
-
-//     }));
     
-//     // set the default to all
-//     let defaultFlavor = dropdownFlavor.property("all");
-//     let defaultRegion = dropdownRegion.property("all");
+function init(promisedata) {
 
-//     // plot charts with defaults
-//     buildCharts(defaultFlavor, defaultRegion);
+    // read in data from flavors
+    // d3.json('/api/v1.0/flavors').then((data => {
+    //     console.log(data);
+    //     // for loop to fill in the drop down lists
+    //     data.flavor.forEach((name => {
+    //         let option = dropdownFlavor.append("option");
+    //         // console.log(name)
+    //         option.text(name);
+    //     }));
+    // }));
 
-// };
+    flavorsIn = promisedata[0];
+    regionsIn = promisedata[1];
 
-// function optionChanged(newFlavor, newRegion) {
+    console.log('flavors', flavorsIn);
+    console.log('regions', regionsIn);
 
-//     buildCharts(newFlavor, newRegion);
+    flavorsIn.forEach((flavor => {
+        let option = dropdownFlavor.append("option");
+        option.text(flavor);
+    }));
 
-// };
+    regionsIn.forEach((region => {
+        let option = dropdownRegion.append("option");
+        option.text(region);
+    }));
 
-// // Initialize the dashboard
-// init();
+    // d3.json('/api/v1.0/regions').then((data => {
+
+    //     // for loop to fill in the drop down lists
+    //     data.region.forEach((name => {
+    //         let option = dropdownRegion.append("option");
+    //         option.text(name);
+    //     }));
+
+    // }));
+    
+    // set the default to all
+    let defaultFlavor = dropdownFlavor.property("all");
+    let defaultRegion = dropdownRegion.property("all");
+
+    // plot charts with defaults
+    buildCharts(defaultFlavor, defaultRegion);
+
+};
+
+function flavorChanged(newFlavor, newRegion) {
+
+    buildCharts(newFlavor, newRegion);
+
+};
+
+// Initialize the dashboard
+init();

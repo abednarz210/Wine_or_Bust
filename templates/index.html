@@ -264,13 +264,8 @@ h2 {
 <div id="visualizations" class="container-fluid text-center bg-grey">
   <h2>Find Your New Favorite Wine</h2><br>
   <h4>Filter by region or flavor and you'll be on your way to finding the wine of your dreams.</h4></br>
-  <h4>Pick a Flavor: <select id="selFlavor" onchange="flavorChanged(this.value)">
-    {% for flavor in flavors %}
-    <option value="{{flavor}}">{{flavor}}</option>
-  {% endfor %}</select> Desired Region: <select id="selRegion" onchange="regionChanged(this.value)">{% for region in regions %}
-    <option value="{{region}}">{{region}}</option>
-  {% endfor %}</select></h4>
-  
+  <h4>Pick a Flavor:   
+    <select id="selFlavor" onchange="flavorChanged(this.value)"></select>Desired Region: <select id="selRegion" onchange="regionChanged(this.value)"></select></h4>
   <div class="row text-center slideanim">
     <div class="col-sm-6">
       <div class="thumbnail">
@@ -403,6 +398,6 @@ $(document).ready(function(){
   });
 })
 </script>
-<script src="static/js/plots.js"></script>
+<script src="../static/js/plots.js"></script>
 </body>
 </html>

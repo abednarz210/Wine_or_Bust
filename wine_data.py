@@ -163,15 +163,15 @@ def filtered_top_wine(flavor='all', region='all'):
         '''
 
     elif flavor != 'all' and region =='all': 
-
         sql = '''
         select name, points, price, variety, winery, description, region, state
         from wine
         where price is not null
-        and description LIKE '% {flavor} %'
+        and description LIKE '% ''' + flavor + ''' %'
         order by points DESC, price
         limit 20;
         '''
+        print(sql)
 
     elif flavor == 'all' and region != 'all': 
 
@@ -179,7 +179,7 @@ def filtered_top_wine(flavor='all', region='all'):
         select name, points, price, variety, winery, description, region, state
         from wine
         where price is not null
-        and region == '{region}'
+        and region ="'''+ region +'''"
         order by points DESC, price
         limit 20;
         '''
@@ -190,8 +190,8 @@ def filtered_top_wine(flavor='all', region='all'):
         select name, points, price, variety, winery, description, region, state
         from wine
         where price is not null
-        and description LIKE '% {flavor} %'
-        and region == '{region}'
+        and description LIKE '% ''' + flavor + ''' %'
+        and region ="'''+ region +'''"
         order by points DESC, price
         limit 20;
         '''
@@ -202,7 +202,7 @@ def filtered_top_wine(flavor='all', region='all'):
     return df.to_dict(orient="records")
 
 if __name__ == "__main__":
-    results = get_filtered_wine('Sonoma Valley')
+    results = filtered_top_wine('sweet','Sonoma Valley')
     print(results)
 
 
