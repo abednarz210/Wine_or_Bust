@@ -3,10 +3,21 @@
 <img width="920" alt="logo-narrow" src="https://user-images.githubusercontent.com/85762953/137573255-234608ae-48a2-406d-bcd0-058f4ae1a59c.png">
 
 
-## Finding the best wines in the USA 
+## Wines of the United States
+
+When it comes to wine, I tell people to throw away the vintage charts and invest in a corkscrew. The best way to learn about wine is the drinking." 
+  --- Alexis Lichine 
+  
+  
 
 ### Motivation
-- Website for wine lovers to discover new domestic wines right here in the U.S. Wines were reviewed by the country’s best wine tasters to describe their flavors and ratings
+
+This website was created to help wine lovers, new or well versed, to select a wine suited to their tasting preference, budget and take a virtual tour of the many vineyards of small or large producers by region across the United States! 
+
+We have compiled the tasting notes and wine ratings from wine experts across the globe to create a user experience as unique as each user.  Visitors to our site explore vineyards in the many regions across the US to search for wines based on flavor, descriptions, variety, points and their personal budgets. So grab your corkscrew and “Cheers” to finding your new favorite variety and region of wine produced in the US! ced in the US! 
+
+
+
 ### [Our Website](https://wine-or-bust.herokuapp.com/)
 
 
@@ -28,12 +39,12 @@
 <li>Plotly</li></ul>
 <li>SQL Lite</li></ul>
 <li>Google Places API</li></ul>
-<li>Matplotlib</li></ul>
 <li>HTML</li></ul>
 <li>CSS</li></ul>
 <li>JavaScript</li></ul>
 <li>SQL Alchemy</li></ul>
 <li>Flask</li></ul>
+<li>FontAwesome</li></ul>
 </details>
 
 
