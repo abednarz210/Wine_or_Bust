@@ -108,12 +108,24 @@ var points = [];
         x: points.reverse(),
         y: wine_name,
         type: 'bar',
-        orientation: 'h'
+        orientation: 'h',
+        marker: {
+            color: 'rgb(102,17,0)'
+        }
     };
 
     let tracePoints = [trace1];
     
     let trace1Layout = {
+        title: "Top Rated Wines",
+        xaxis: {
+            title: 'Rating',
+            range: [50, 100]
+        },
+        yaxis: {
+            title: 'Wine',
+            showticklabels: false
+        },
         margin: { t: 30, l: 30 } 
     };
     
@@ -133,15 +145,26 @@ function buildChartPrices(wineData) {
     
         let trace2 = {
     
-            x: price,
+            x: price.sort((a,b)=>b-a),
             y: wine_name,
             type: 'bar',
-            orientation: 'h'
+            orientation: 'h',
+            marker: {
+                color: 'rgb(102,17,0)'
+            }
         };
     
         let tracePrices = [trace2];
         
         let trace2Layout = {
+            title: "Prices Descending",
+            xaxis: {
+                title: 'Price'
+            },
+            yaxis: {
+                title: 'Wine',
+                showticklabels: false
+            },
             margin: { t: 30, l: 30 } 
         };
         
