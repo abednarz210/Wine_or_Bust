@@ -168,7 +168,7 @@ function buildChartPrices(wineData) {
         let tracePrices = [trace2];
         
         let trace2Layout = {
-            title: "Prices Descending",
+            title: "Prices: Low to High",
             xaxis: {
                 title: 'Price'
             },
