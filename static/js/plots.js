@@ -76,7 +76,7 @@ function regionSelected(newRegion) {
     let changeFlavor = document.getElementById("selFlavor").value;
     urls[2]=(`/api/v1.0/filteredwine/${changeFlavor}/${newRegion}`)
 
-    // console.log(urls[2]);
+    console.log(urls[2]);
     // console.log(winesIn);
     // window.open(urls[2]);
 
@@ -105,13 +105,18 @@ var points = [];
 
     let trace1 = {
 
-        x: points.reverse(),
+        x: points,
         y: wine_name,
         type: 'bar',
         orientation: 'h',
         marker: {
             color: 'rgb(102,17,0)'
-        }
+        },
+        transforms: [{
+            type: 'sort',
+            target: 'y',
+            order: 'descending'
+        }]
     };
 
     let tracePoints = [trace1];
@@ -145,13 +150,19 @@ function buildChartPrices(wineData) {
     
         let trace2 = {
     
-            x: price.sort((a,b)=>b-a),
+            // x: price.sort((a,b)=>b-a),
+            x: price,
             y: wine_name,
             type: 'bar',
             orientation: 'h',
             marker: {
                 color: 'rgb(102,17,0)'
-            }
+            },
+            transforms: [{
+                type: 'sort',
+                target: 'x',
+                order: 'descending'
+            }]
         };
     
         let tracePrices = [trace2];
