@@ -44,6 +44,8 @@ We have compiled the tasting notes and wine ratings from wine experts across the
 <li>JavaScript</li></ul>
 <li>SQL Alchemy</li></ul>
 <li>Flask</li></ul>
+<li>Bootstrap</li></ul>
+<li>Google Fonts</li></ul>
 <li>FontAwesome</li></ul>
 </details>
 
