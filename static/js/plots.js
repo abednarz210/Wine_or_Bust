@@ -97,10 +97,12 @@ function buildChartPoints(wineData) {
 
 var wine_name = [];
 var points = [];
+var prices = [];
 
     wineData.forEach((wine => {
         wine_name.push(wine.name);
         points.push(wine.points);
+        prices.push(wine.price);
     }));
 
     let trace1 = {
@@ -110,13 +112,17 @@ var points = [];
         type: 'bar',
         orientation: 'h',
         marker: {
-            color: 'rgb(102,17,0)'
+            color: 'rgb(102,17,0)',
         },
         transforms: [{
             type: 'sort',
             target: 'y',
             order: 'descending'
-        }]
+        }],
+        hovertext: prices,
+        hovertemplate: '<b>Wine</b>: %{y}&nbsp;&nbsp;' +
+                        '<b>Points</b>: %{x}&nbsp;' +
+                        '<b>Price</b>: $%{hovertext}<extra></extra>'
     };
 
     let tracePoints = [trace1];
@@ -125,13 +131,13 @@ var points = [];
         title: "Top Rated Wines",
         xaxis: {
             title: 'Rating',
-            range: [50, 100]
+            range: [0, 100]
         },
         yaxis: {
             title: 'Wine',
             showticklabels: false
         },
-        margin: { t: 30, l: 30 } 
+        margin: { t: 30, l: 30 }
     };
     
     Plotly.newPlot("barPoints", tracePoints, trace1Layout);
@@ -142,10 +148,12 @@ function buildChartPrices(wineData) {
 
     var wine_name = [];
     var price = [];
+    var points = [];
     
         wineData.forEach((wine => {
             wine_name.push(wine.name);
             price.push(wine.price);
+            points.push(wine.points);
         }));
     
         let trace2 = {
@@ -162,21 +170,25 @@ function buildChartPrices(wineData) {
                 type: 'sort',
                 target: 'x',
                 order: 'descending'
-            }]
+            }],
+            hovertext: points,
+            hovertemplate: '<extra></extra><b>Wine</b>: %{y}&nbsp;' +
+                            '<b>Points</b>: %{hovertext}&nbsp;' +
+                            '<b>Price</b>: $%{x:.2f}'
         };
     
         let tracePrices = [trace2];
         
         let trace2Layout = {
-            title: "Prices: Low to High",
+            title: "$$ Prices: Low to High",
             xaxis: {
-                title: 'Price'
+                title: 'Price by the Bottle'
             },
             yaxis: {
                 title: 'Wine',
                 showticklabels: false
             },
-            margin: { t: 30, l: 30 } 
+            margin: { t: 30, l: 30 }
         };
         
         Plotly.newPlot("barPrices", tracePrices, trace2Layout);
