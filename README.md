@@ -47,9 +47,6 @@ We have compiled the tasting notes and wine ratings from wine experts across the
 <li>FontAwesome</li></ul>
 </details>
 
-
-
-
 ### Our Team!
 |[Alex](https://github.com/aespinosa49)|[Amy](https://github.com/abednarz210)|[Ashley](https://github.com/ashleylynnl)|[Michelle](https://github.com/michelleherman13)|[Samantha](https://github.com/Sjenn257)|
 |---|---|---|---|---|
